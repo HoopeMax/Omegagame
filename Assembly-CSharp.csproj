@@ -56,12 +56,12 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
-    <Compile Include="Assets\Scripts\PlaerControl.cs" />
-    <Compile Include="Assets\Scripts\CameraControll.cs" />
-    <Compile Include="Assets\Scripts\PlatformGenerator.cs" />
-    <Compile Include="Assets\Scripts\PlatformDestroyer.cs" />
     <Compile Include="Assets\Scripts\ObjectPoolet.cs" />
+    <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
+    <Compile Include="Assets\Scripts\PlatformGenerator.cs" />
+    <Compile Include="Assets\Scripts\PlaerControl.cs" />
+    <Compile Include="Assets\Scripts\PlatformDestroyer.cs" />
+    <Compile Include="Assets\Scripts\CameraControll.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
