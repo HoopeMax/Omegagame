@@ -11,6 +11,7 @@ public class PickupCoins : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        theScoreManager = FindObjectOfType<ScoreManager>();
         
     }
 
@@ -18,5 +19,14 @@ public class PickupCoins : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.name == "Player")
+        {
+            theScoreManager.AddCoins(coinsToGive);
+            gameObject.SetActive(false);
+        }
     }
 }

@@ -7,6 +7,9 @@ public class ScoreManager : MonoBehaviour
 {
     public Text scoreText;
     public Text hiScoreText;
+    public Text textCoins;
+
+    public float coinsÑount;
 
     public float scoreCount;
     public float hiScoreCount;
@@ -41,5 +44,11 @@ public class ScoreManager : MonoBehaviour
 
         scoreText.text = "Î÷êè: " + Mathf.Round (scoreCount);
         hiScoreText.text ="Ğåêîäğ: " + Mathf.Round (hiScoreCount);
+        textCoins.text="Ìîíåòû: " + Mathf.Round(coinsÑount);
     } 
+
+    public void AddCoins (int CoinToAdd)
+    {
+        coinsÑount += CoinToAdd;
+    }
 }

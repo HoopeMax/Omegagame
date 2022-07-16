@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
         thePlayer.gameObject.SetActive(true);
 
         theScoreManager.scoreCount = 0;
+        theScoreManager.coins—ount = 0;
         theScoreManager.scoreIncreasing = true;
 
     }

@@ -18,6 +18,9 @@ public class PlaerControl : MonoBehaviour
     public float playerJumpTime;
     private float playerJumpTimeCounter;
 
+    private bool stoppedJumpin;
+    private bool doubleJumpCan;
+
     private  Rigidbody2D myRigidbody;
 
     public bool grounCheck;
@@ -47,6 +50,8 @@ public class PlaerControl : MonoBehaviour
         playerMoveSpeedStore = playerMoveSpeed;
         speedMilestoneCountStore = speedMilestoneCount;
         speedIncreaseMilestoneStore= speedIncreaseMilestone;
+
+        stoppedJumpin = true;
         
     }
 
@@ -73,10 +78,20 @@ public class PlaerControl : MonoBehaviour
             if(grounCheck)
             {
                 myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, playerJumpForce);
+                stoppedJumpin = false;
+            }
+
+            if (!grounCheck && doubleJumpCan)
+            {
+                myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, playerJumpForce);
+                playerJumpTimeCounter = playerJumpTime;
+                stoppedJumpin = false;
+                doubleJumpCan = false;
+
             }
         }
 
-        if (Input.GetKey (KeyCode.Space)|| Input.GetMouseButton(0))
+        if ((Input.GetKey (KeyCode.Space)|| Input.GetMouseButton(0)) && !stoppedJumpin)
         {
             if (playerJumpTimeCounter > 0)
             {
@@ -88,11 +103,13 @@ public class PlaerControl : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonUp(0))
         {
             playerJumpTimeCounter = 0;
+            stoppedJumpin = true;
         }
 
         if (grounCheck)
         {
             playerJumpTimeCounter = playerJumpTime;
+            doubleJumpCan = true;
         }
 
         myAnimator.SetFloat("playerSpeed", myRigidbody.velocity.x);
