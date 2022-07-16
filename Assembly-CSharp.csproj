@@ -62,6 +62,10 @@
     <Compile Include="Assets\Scripts\PlaerControl.cs" />
     <Compile Include="Assets\Scripts\PlatformDestroyer.cs" />
     <Compile Include="Assets\Scripts\CameraControll.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\ScoreManager.cs" />
+    <Compile Include="Assets\Scripts\PickupCoins.cs" />
+    <Compile Include="Assets\Scripts\BackGroundScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
