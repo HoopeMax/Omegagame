@@ -56,6 +56,7 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\DethManu.cs" />
     <Compile Include="Assets\Scripts\ObjectPoolet.cs" />
     <Compile Include="Assets\Scripts\BackGroundScript.cs" />
     <Compile Include="Assets\Scripts\CoinsGenerator.cs" />
@@ -67,9 +68,8 @@
     <Compile Include="Assets\Scripts\PlaerControl.cs" />
     <Compile Include="Assets\Scripts\PlatformDestroyer.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\CameraControll.cs" />
-    <Compile Include="Assets\Scripts\DethManu.cs" />
     <Compile Include="Assets\Scripts\PauseMenu.cs" />
+    <Compile Include="Assets\Scripts\CameraControll.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

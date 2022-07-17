@@ -28,6 +28,10 @@ public class PlaerControl : MonoBehaviour
     public Transform CubeCheckGround;
     public float CubeCheckGroundradiys;
 
+    public AudioSource jumpSound;
+    public AudioSource dethSound;
+    
+
     //private Collider2D  myCollider;
 
     private Animator myAnimator;
@@ -79,6 +83,7 @@ public class PlaerControl : MonoBehaviour
             {
                 myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, playerJumpForce);
                 stoppedJumpin = false;
+                jumpSound.Play();
             }
 
             if (!grounCheck && doubleJumpCan)
@@ -87,7 +92,7 @@ public class PlaerControl : MonoBehaviour
                 playerJumpTimeCounter = playerJumpTime;
                 stoppedJumpin = false;
                 doubleJumpCan = false;
-
+                jumpSound.Play();
             }
         }
 
@@ -124,6 +129,7 @@ public class PlaerControl : MonoBehaviour
             playerMoveSpeed = playerMoveSpeedStore;
             speedMilestoneCount = speedMilestoneCountStore;
             speedIncreaseMilestone=speedIncreaseMilestoneStore;
+            dethSound.Play();
         }
     }
 }
