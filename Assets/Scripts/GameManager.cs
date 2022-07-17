@@ -15,6 +15,10 @@ public class GameManager : MonoBehaviour
 
     private ScoreManager theScoreManager;
 
+    public DethManu theDethScreen;
+
+    public BackGroundScript theBackGroundScript;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +26,7 @@ public class GameManager : MonoBehaviour
         playerStartpoint = thePlayer.transform.position;
 
         theScoreManager = FindObjectOfType<ScoreManager>();
+        theBackGroundScript = FindObjectOfType<BackGroundScript>();
     }
 
     // Update is called once per frame
@@ -32,15 +37,19 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        StartCoroutine("RestartGameCo");
-    }
-
-    public IEnumerator RestartGameCo()
-    {
+        // StartCoroutine("RestartGameCo");
         theScoreManager.scoreIncreasing = false;
         thePlayer.gameObject.SetActive(false);
-        yield return new WaitForSeconds(0.5f);
 
+        theDethScreen.gameObject.SetActive(true);
+
+        theBackGroundScript.gameObject.SetActive(false);
+    }
+
+    public void Reset()
+    {
+        theDethScreen.gameObject.SetActive(false);
+        theBackGroundScript.gameObject.SetActive(true);
         platformList = FindObjectsOfType<PlatformDestroyer>();
         for (int i = 0; i < platformList.Length; i++)
         {
@@ -56,4 +65,26 @@ public class GameManager : MonoBehaviour
         theScoreManager.scoreIncreasing = true;
 
     }
+
+    //public IEnumerator RestartGameCo()
+    //{
+    //    theScoreManager.scoreIncreasing = false;
+    //    thePlayer.gameObject.SetActive(false);
+    //    yield return new WaitForSeconds(0.5f);
+
+    //    platformList = FindObjectsOfType<PlatformDestroyer>();
+    //    for (int i = 0; i < platformList.Length; i++)
+    //    {
+    //        platformList[i].gameObject.SetActive(false);
+    //    }
+
+    //    thePlayer.transform.position = playerStartpoint;
+    //    platformGenerator.position = platformStartPoint;
+    //    thePlayer.gameObject.SetActive(true);
+
+    //    theScoreManager.scoreCount = 0;
+    //    theScoreManager.coinsÑount = 0;
+    //    theScoreManager.scoreIncreasing = true;
+
+    //}
 }
